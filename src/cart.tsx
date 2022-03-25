@@ -15,7 +15,7 @@ const Cart = () => {
     <VStack
       w="full"
       h="full"
-      p={10}
+      p={20}
       spacing={10}
       alignItems="flex-start"
       bg="gray.50"
