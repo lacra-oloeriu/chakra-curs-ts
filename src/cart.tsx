@@ -1,4 +1,4 @@
-import { AspectRatio } from "@chakra-ui/react";
+import { AspectRatio, Stack } from "@chakra-ui/react";
 import {
   Heading,
   VStack,
@@ -7,6 +7,7 @@ import {
   HStack,
   Image,
   Input,
+  Divider,
 } from "@chakra-ui/react";
 
 const Cart = () => {
@@ -28,11 +29,41 @@ const Cart = () => {
           </Button>
         </Text>
       </VStack>
-      <HStack spacing={6} alignItems="center" w="full" />
-      <AspectRatio ratio={1} w={24}>
-        <Image src={require('./images/logo-chessout.png')} alt="My logo" />
-      </AspectRatio>
-      
+      <HStack spacing={6} alignItems="center" w="full">
+        <AspectRatio ratio={1} w={24}>
+          <Image src={require("./images/logo-chessout.png")} alt="My logo" />
+        </AspectRatio>
+        <Stack
+          spacing={0}
+          w="full"
+          direction="row"
+          justifyContent="space-between"
+          alignItems="center"
+        >
+          <VStack w="full" spacing={0} alignItems="start">
+            <Heading size="md">Entry price</Heading>
+            <Text color="gray.600">BYCCO</Text>
+          </VStack>
+        </Stack>
+        <Heading size="sm" textAlign="end">
+          €1400.00
+        </Heading>
+      </HStack>
+      <VStack spacing={4} alignItems="stretch" w="full">
+        <HStack justifyContent="space-between">
+          <Text color="gray.600"> Subtotal</Text>
+          <Heading size="sm">€1400.00 </Heading>
+        </HStack>
+        <HStack justifyContent="space-between">
+          <Text color="gray.600">Taxes(estimated)</Text>
+          <Heading size="sm">€70.00 </Heading>
+        </HStack>
+      </VStack>
+      <Divider />
+      <HStack justifyContent="space-between" w="full">
+        <Text color="gray.600">Total</Text>
+        <Heading size="lg">€1470.00 </Heading>
+      </HStack>
     </VStack>
   );
 };
